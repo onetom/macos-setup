@@ -28,7 +28,7 @@ see the note in that script for why.
 | 01 | `01-keyboard-and-text.sh`     | Fastest key repeat/delay; turn off auto-correction and smart quotes |
 | 02 | `02-screen-zoom.sh`           | Control + scroll to zoom the screen |
 | 03 | `03-disable-hotkeys.sh`       | Free Cmd-M (and friends) from the menu so IntelliJ/Emacs can use them |
-| 04 | `04-capslock-to-control.sh`   | Caps Lock → Control, persisted via a login LaunchAgent |
+| 04 | `04-capslock-to-control.sh`   | Caps Lock → Control on the built-in keyboard: live now via hidutil, persisted via the native Modifier Keys preference |
 | 05 | `05-terminal-profile.sh`      | Terminal "Clear Light": Option-as-Meta, 120×40, 10k scrollback, no bell |
 | 06 | `06-homebrew.sh`              | Install Homebrew + add to shell |
 | 07 | `07-brew-apps.sh`             | Install zerotier-one, 1password, 1password-cli, firefox |
