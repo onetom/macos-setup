@@ -38,7 +38,8 @@ if ! $HOSTED_IN_TERMINAL; then
 fi
 
 pb() { # set-or-add a typed key inside the Clear Light profile dict
-  local key="$1" type="$2" val="$3" path=":Window Settings:${PROFILE}:${key}"
+  local key="$1" type="$2" val="$3"
+  local path=":Window Settings:${PROFILE}:${key}"
   /usr/libexec/PlistBuddy -c "Set '$path' $val" "$PLIST" 2>/dev/null \
     || /usr/libexec/PlistBuddy -c "Add '$path' $type $val" "$PLIST"
 }
