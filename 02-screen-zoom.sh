@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Enable "zoom the screen while holding a modifier and scrolling".
 # Equivalent to: System Settings > Accessibility > Zoom >
 #   "Use scroll gesture with modifier keys to zoom" = Control.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 log "Enable Control + scroll to zoom the screen"

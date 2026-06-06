@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Install the Nix package manager.
 #
 # We use the Determinate Systems nix-installer: on macOS it is far more robust than
@@ -6,7 +6,7 @@
 # upgrades, clean uninstall) and enables the flakes + nix-command features that
 # step 10 (nix profile install) needs. It installs *upstream* Nix by default.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 if command -v nix >/dev/null 2>&1 || [[ -e /nix/var/nix/profiles/default ]]; then

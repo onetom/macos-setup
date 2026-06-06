@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Join a ZeroTier network. Requires zerotier-one (installed in step 07) and its
 # background service to be running + approved.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 NETWORK_ID="123456789012"

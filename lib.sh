@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Shared helpers for the macOS setup scripts. Sourced by every step script.
 
 # Pretty logging (color only when stdout is a TTY).

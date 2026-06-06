@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Keyboard repeat speed + text-input behaviour (auto-correction, smart quotes).
 # All settings are per-user and live in the global preferences domain (-g / NSGlobalDomain).
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 log "Keyboard repeat: delay-until-repeat + repeat rate (fastest)"

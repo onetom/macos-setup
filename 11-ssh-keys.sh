@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Install an Ed25519 SSH key pair into ~/.ssh.
 #
 # The key material lives in two UNTRACKED files next to this script:
@@ -11,7 +11,7 @@
 # stray character, so KEY_NAME defaults to the conventional `id_ed25519`. Change it
 # here (and rename the two source files to match) if that "P" was intentional.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 KEY_NAME="id_ed25519"

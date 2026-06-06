@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Stop macOS menu shortcuts from shadowing app-defined keystrokes (IntelliJ, Emacs, ...).
 #
 # You can't *delete* a menu command's shortcut from the CLI, but you can remap it.
@@ -9,7 +9,7 @@
 # Modifier glyphs in the value string:  @=Command  ^=Control  ~=Option  $=Shift
 # Keyed by the *menu item title*, so it applies in every app that exposes that title.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 log "Free up menu shortcuts so apps can use them"

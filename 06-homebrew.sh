@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Install Homebrew (no-op if already installed) and wire it into the login shell.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 if brew_prefix >/dev/null 2>&1; then

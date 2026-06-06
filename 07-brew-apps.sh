@@ -1,9 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Install the requested applications via Homebrew casks.
 #   zerotier-one   1password   1password-cli   firefox
 # None of these come from the Mac App Store, so no App Store sign-in is required.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 load_brew || { err "Homebrew not found. Run 06-homebrew.sh first."; exit 1; }
 

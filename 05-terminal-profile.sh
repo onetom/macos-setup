@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Configure Terminal.app: default profile "Clear Light" + behavioural tweaks.
 #
 # Terminal stores each profile as a nested dict under `Window Settings`. A built-in
@@ -10,7 +10,7 @@
 # direct plist edits. For a reliable result, run this step while Terminal is NOT the
 # host shell (e.g. from iTerm/VS Code/SSH), or quit Terminal afterwards as instructed.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 
 PROFILE="Clear Light"

@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Install direnv + nix-direnv via Nix, then hook them into zsh.
 set -euo pipefail
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; source "$SCRIPT_DIR/lib.sh"
+SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 load_nix
 command -v nix >/dev/null 2>&1 || { err "nix not on PATH. Run 09-nix.sh and open a new shell first."; exit 1; }
