@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
 require_macos
 load_nix
-command -v nix >/dev/null 2>&1 || { err "nix not on PATH. Run 09-nix.sh and open a new shell first."; exit 1; }
+command -v nix >/dev/null 2>&1 || { err "nix not on PATH. Run 08-nix.sh and open a new shell first."; exit 1; }
 
 log "Installing direnv and nix-direnv into your user nix profile"
 # nix-command + flakes are enabled by the Determinate installer; pass them explicitly

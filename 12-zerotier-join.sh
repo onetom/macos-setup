@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Join a ZeroTier network. Requires zerotier-one (installed in step 07) and its
+# Join a ZeroTier network. Requires zerotier-one (installed in step 11) and its
 # background service to be running + approved.
 set -euo pipefail
 SCRIPT_DIR="${0:A:h}"; source "$SCRIPT_DIR/lib.sh"
@@ -14,7 +14,7 @@ for cand in zerotier-cli /usr/local/bin/zerotier-cli \
             "/Library/Application Support/ZeroTier/One/zerotier-cli"; do
   if command -v "$cand" >/dev/null 2>&1 || [[ -x "$cand" ]]; then ZT_CLI="$cand"; break; fi
 done
-[[ -n "$ZT_CLI" ]] || { err "zerotier-cli not found. Install zerotier-one (step 07) and launch ZeroTier One.app once."; exit 1; }
+[[ -n "$ZT_CLI" ]] || { err "zerotier-cli not found. Install zerotier-one (step 11) and launch ZeroTier One.app once."; exit 1; }
 
 need_sudo
 # Wait briefly for the service to come up (it needs to be running to accept a join).
