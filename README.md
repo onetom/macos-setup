@@ -8,7 +8,8 @@ Silicon). Each step is a small, idempotent script; `setup.sh` runs them in order
 ```sh
 cd macos-setup
 chmod +x *.sh
-# 1) Paste your real SSH keys into 11-ssh-keys.sh first (it refuses placeholders).
+# 1) Paste your real keys into the untracked id_ed25519 / id_ed25519.pub files
+#    (git-ignored; the script refuses the shipped placeholders).
 ./setup.sh            # run everything, with a confirmation prompt
 ./setup.sh --list     # list the steps
 ./setup.sh 06 07 08   # run only Homebrew + apps + ZeroTier join
@@ -34,7 +35,7 @@ see the note in that script for why.
 | 08 | `08-zerotier-join.sh`         | Join ZeroTier network `123456789012` |
 | 09 | `09-nix.sh`                   | Install Nix (Determinate installer, flakes enabled) |
 | 10 | `10-direnv-nix-direnv.sh`     | Install direnv + nix-direnv via Nix; hook into zsh |
-| 11 | `11-ssh-keys.sh`              | Write `~/.ssh/id_ed25519{,.pub}` from inlined values |
+| 11 | `11-ssh-keys.sh`              | Install `~/.ssh/id_ed25519{,.pub}` from the untracked key files |
 
 ## Things that need a logout or a click
 
