@@ -37,6 +37,7 @@ see the note in that script for why.
 | 10 | `10-homebrew.sh`            | Install Homebrew + add to shell                                                                                       |
 | 11 | `11-brew-apps.sh`           | Install everything in `Brewfile` via `brew bundle` (taps, formulae, casks, …)                                         |
 | 12 | `12-zerotier-join.sh`       | Join ZeroTier network `123456789012`                                                                                  |
+| 13 | `13-remote-management.sh`   | Configure Remote Management (ARD/Screen Sharing): all-users full control, menu-bar status, guests may request control, VNC password mode off (you flip the switch on by hand — see below) |
 
 ## Things that need a logout or a click
 
@@ -48,6 +49,10 @@ see the note in that script for why.
   take effect, grant your terminal Full Disk Access or flip the toggle once in
   System Settings → Accessibility → Zoom.
 - **Nix**: open a new terminal after step 08 so `nix` is on your PATH before step 09.
+- **Remote Management** (step 13): Apple blocks turning it *on* from the command
+  line (macOS 12.1+), so the step only pre-configures the options and then opens
+  System Settings → General → Sharing for you to flip **Remote Management** on by
+  hand (or push it via MDM). The configured options apply the moment you do.
 
 ## Customising
 
@@ -56,3 +61,5 @@ see the note in that script for why.
 - More menu shortcuts to free: add `NSUserKeyEquivalents` entries in step 03.
 - ZeroTier network ID: `NETWORK_ID` in step 12.
 - SSH key filename: `KEY_NAME` in step 07 (defaults to `id_ed25519`).
+- Remote Management access: edit the `-allowAccessFor` line in step 13 to limit
+  remote control to specific accounts instead of all local users.
